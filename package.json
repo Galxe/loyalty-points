@@ -1,0 +1,50 @@
+{
+  "name": "loyalty-points-contracts",
+  "version": "1.0.0",
+  "description": "Galxe loyalty-points contracts",
+  "scripts": {
+    "compile": "hardhat compile",
+    "lint": "hardhat check",
+    "prettier:check": "prettier --check --plugin=prettier-plugin-solidity 'contracts/**/*.sol'",
+    "prettier": "prettier . --write",
+    "test": "hardhat test --parallel",
+    "test:report-gas": "REPORT_GAS=true hardhat test",
+    "coverage": "hardhat coverage",
+    "deploy:loyaltyPointFactory:gravity": "HARDHAT_NETWORK=gravity hardhat run scripts/deploy_LoyaltyPointFactory.ts",
+    "deploy:loyaltyPointByFactory:gravity": "hardhat run --network gravity scripts/deploy_loyaltyPointByFactory.ts",
+    "verify:gravity": "npx hardhat ignition verify chain-1625"
+  },
+  "author": "Galxe team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.6",
+    "@nomicfoundation/hardhat-ethers": "^3.0.6",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.6",
+    "@nomiclabs/hardhat-solhint": "^3.0.1",
+    "@openzeppelin/hardhat-upgrades": "^3.1.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.16",
+    "@types/mocha": "^10.0.6",
+    "chai": "^4.4.1",
+    "ethers": "^6.12.2",
+    "hardhat": "^2.22.3",
+    "hardhat-gas-reporter": "^1.0.10",
+    "prettier": "^3.2.5",
+    "prettier-plugin-solidity": "^1.3.1",
+    "solhint-community": "^4.0.0",
+    "solhint-plugin-prettier": "^0.1.0",
+    "solidity-coverage": "^0.8.12",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@nomicfoundation/solidity-analyzer": "^0.1.1",
+    "@openzeppelin/contracts": "^5.0.2",
+    "@openzeppelin/contracts-upgradeable": "^5.0.2"
+  }
+}
